@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.capsulekaiba.pickleduels",
+      "sha256_cert_fingerprints": [
+        "DA:98:46:C2:B6:1B:19:09:84:0E:CE:B8:3F:4D:E4:AC:DD:09:0C:B9:C1:E5:19:94:69:91:C0:B4:74:59:E5:27",
+        "37:7D:28:9F:89:A1:D7:25:43:05:88:BE:30:7C:4C:78:95:F0:BE:E0:8A:9F:7F:27:3A:61:88:3B:D3:F4:80:D0"
+      ]
+    }
+  }
+]
