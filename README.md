@@ -262,17 +262,24 @@ or LibreOffice here, and macOS `textutil` flattens tables into prose.
 
 ## The demo request form
 
-`/organize/#demo` uses **Netlify Forms** — no backend.
+`/organize/#demo` posts to **[Web3Forms](https://web3forms.com)**. The site's static server
+(`python3 -m http.server` in the Dockerfile) cannot accept POST requests, so a hosted form
+endpoint receives submissions and emails them to you.
 
-- Detected at deploy time via `data-netlify="true"` plus the hidden `form-name` field.
-- `netlify-honeypot="bot-field"` provides spam filtering with no third-party service.
-- **With JavaScript:** submits via `fetch` and shows an inline success state.
-- **Without JavaScript:** posts normally and Netlify serves `/organize/thanks/`.
+**Access key:** the hidden `access_key` field in `src/pages/organize.html` holds the
+Web3Forms key, which is tied to the inbox that receives requests. The key is meant to be public,
+since all it can do is send mail to that inbox. To send requests somewhere else, create a new
+key at web3forms.com and swap it in.
 
-Both paths are live, so the form works even if the script fails to load.
+- `botcheck` is Web3Forms' honeypot checkbox for spam filtering. `subject` and `from_name`
+  set the notification email's subject and sender name.
+- **With JavaScript:** submits via `fetch` and shows an inline success state. If the request
+  fails, an inline error asks the visitor to retry or email us, and what they typed is kept.
+- **Without JavaScript:** posts normally and Web3Forms shows its own confirmation page. To
+  send visitors to `/organize/thanks/` instead, add
+  `<input type="hidden" name="redirect" value="https://YOUR-DOMAIN/organize/thanks/">`.
 
-Submissions appear under **Forms** in the Netlify dashboard. No notification email is
-configured — to add one, go to *Site configuration → Forms → Form notifications*.
+Each submission arrives as an email to the inbox tied to the access key.
 
 ---
 

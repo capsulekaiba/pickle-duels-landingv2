@@ -104,6 +104,8 @@
   if (!form) return;
 
   var success = document.getElementById('form-success');
+  var formError = document.getElementById('form-error');
+  if (formError) formError.setAttribute('tabindex', '-1');
   var submit = form.querySelector('button[type="submit"]');
 
   // Suppress native validation bubbles so our own inline, screen-reader
@@ -157,23 +159,37 @@
       return;
     }
 
-    // Submit in the background so we can show an inline success state.
-    // Without fetch, the form posts normally and Netlify serves /organize/thanks/.
+    // Submit to Web3Forms in the background so we can show an inline success
+    // state. Without fetch, the form posts normally to Web3Forms' own page.
     if (!window.fetch) return;
     event.preventDefault();
+
+    var setError = function (message) {
+      if (!formError) return;
+      formError.textContent = message || '';
+      formError.hidden = !message;
+    };
+    setError('');
 
     if (submit) {
       submit.disabled = true;
       submit.textContent = 'Sending...';
     }
 
-    fetch('/', {
+    fetch(form.action, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString()
+      headers: { Accept: 'application/json' },
+      body: new FormData(form)
     })
       .then(function (response) {
-        if (!response.ok) throw new Error('Request failed: ' + response.status);
+        // Web3Forms reports failures in the JSON body as well as the status.
+        return response.json().catch(function () { return {}; }).then(function (data) {
+          if (!response.ok || !data.success) {
+            throw new Error('Request failed: ' + response.status + ' ' + (data.message || ''));
+          }
+        });
+      })
+      .then(function () {
         form.hidden = true;
         if (success) {
           success.hidden = false;
@@ -182,14 +198,15 @@
           success.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' });
         }
       })
-      .catch(function () {
-        // Fall back to a normal page POST rather than stranding the visitor.
+      .catch(function (error) {
+        // Tell the visitor plainly and keep what they typed, so they can retry.
+        if (window.console && console.error) console.error('[pickle-duels] form submit', error);
         if (submit) {
           submit.disabled = false;
           submit.textContent = 'Request a demo';
         }
-        form.removeAttribute('data-enhanced');
-        form.submit();
+        setError('Sorry, we couldn’t send your request. Please try again, or email us at pickleduels@gmail.com.');
+        if (formError) formError.focus();
       });
   });
   });

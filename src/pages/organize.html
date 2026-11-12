@@ -124,18 +124,21 @@ companyCurrent:
         </div>
 
         <div>
+          <!-- Submissions go to Web3Forms (the static server can't accept POSTs).
+               Access key from web3forms.com (emailed to the inbox that receives requests).
+               The key is public by design: it only lets someone send mail to you. -->
           <form
             class="form"
             name="demo-request"
             method="POST"
-            action="/organize/thanks/"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
+            action="https://api.web3forms.com/submit"
             data-enhanced
           >
-            <input type="hidden" name="form-name" value="demo-request">
+            <input type="hidden" name="access_key" value="f10826f8-5b32-4c30-a6f4-31084abf3ab3">
+            <input type="hidden" name="subject" value="New VenueOS demo request">
+            <input type="hidden" name="from_name" value="Pickle Duels website">
             <p class="hp" aria-hidden="true">
-              <label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+              <label>Leave this box unchecked <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
             </p>
 
             <div class="form__grid form__grid--2">
@@ -193,6 +196,7 @@ companyCurrent:
             </div>
 
             <div class="form__footer">
+              <p class="form__error" id="form-error" role="alert" hidden></p>
               <button class="btn btn--court btn--lg" type="submit">Request a demo</button>
               <p class="form__fineprint">
                 We&#39;ll only use your details to contact you about VenueOS.
