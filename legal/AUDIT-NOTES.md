@@ -33,7 +33,7 @@ standard licensing terminology, and zero at 10 words or longer.
 
 | Name | Where it appears |
 |---|---|
-| RallyXP | This website — "Pickle Duels is powered by RallyXP" |
+| Rally XP | This website — "Pickle Duels is powered by Rally XP" |
 | Capsule Kaiba, LLC | App Store seller and copyright line (© 2024) |
 | CLMS Studio LLC | Via the mislinked Terms of Use above — unrelated |
 
