@@ -1,7 +1,7 @@
 # Pickle Duels — marketing site
 
 Static marketing site for **Pickle Duels** (player app) and **VenueOS** (pickleball
-tournament management software for clubs and organizers). Powered by RallyXP.
+tournament management software for clubs and organizers). Powered by Rally XP.
 
 Three audience sections: **Play**, **Organize**, **Company**.
 

@@ -34,16 +34,16 @@ attribution required. Credited here anyway, as Unsplash's API guidelines ask.
 
 | File | Used for | Source |
 |---|---|---|
-| `logo-pickle-duels.png` | Header logo, all pages | Own artwork — © RallyXP |
-| `founder-huyen.png` | Huyen Hoang's founder card (`/company/`) | Own illustration — © RallyXP |
-| `founder-jackson.png` | Jackson Wang's founder card (`/company/`) | Own illustration — © RallyXP |
-| `venueos-create-tournament.png` | Capability 1, Create tournaments (`/organize/`) | Own product mockup — © RallyXP |
-| `venueos-registrations.png` | Capability 2, Manage registrations (`/organize/`) | Own product mockup — © RallyXP |
-| `venueos-check-in.png` | Capability 3, Check-in on event day (`/organize/`) | Own product mockup — © RallyXP |
+| `logo-pickle-duels.png` | Header logo, all pages | Own artwork — © Rally XP |
+| `founder-huyen.png` | Huyen Hoang's founder card (`/company/`) | Own illustration — © Rally XP |
+| `founder-jackson.png` | Jackson Wang's founder card (`/company/`) | Own illustration — © Rally XP |
+| `venueos-create-tournament.png` | Capability 1, Create tournaments (`/organize/`) | Own product mockup — © Rally XP |
+| `venueos-registrations.png` | Capability 2, Manage registrations (`/organize/`) | Own product mockup — © Rally XP |
+| `venueos-check-in.png` | Capability 3, Check-in on event day (`/organize/`) | Own product mockup — © Rally XP |
 | `organizers-court.webp` | Home path card — For organizers & clubs (`/`) | [PLACEHOLDER: source and licence for the isometric court illustration] |
-| `venueos-pool-play.png` | Capability 4, Track pool play (`/organize/`) | Own product mockup — © RallyXP |
-| `venueos-brackets.png` | Capability 5, Track bracket play (`/organize/`) | Own product mockup — © RallyXP |
-| `venueos-invite-past-players.png` | Capability 6, Re-engage past participants (`/organize/`) | Own product mockup — © RallyXP |
+| `venueos-pool-play.png` | Capability 4, Track pool play (`/organize/`) | Own product mockup — © Rally XP |
+| `venueos-brackets.png` | Capability 5, Track bracket play (`/organize/`) | Own product mockup — © Rally XP |
+| `venueos-invite-past-players.png` | Capability 6, Re-engage past participants (`/organize/`) | Own product mockup — © Rally XP |
 | `badge-app-store.png` | App Store button (home, `/play/`) | Official Apple badge artwork |
 | `badge-google-play.png` | Google Play button (home, `/play/`) | Official Google badge artwork |
 
