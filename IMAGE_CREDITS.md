@@ -34,7 +34,6 @@ attribution required. Credited here anyway, as Unsplash's API guidelines ask.
 
 | File | Used for | Source |
 |---|---|---|
-| `logo-pickle-duels.png` | Header logo, all pages | Own artwork — © Rally XP |
 | `founder-huyen.png` | Huyen Hoang's founder card (`/company/`) | Own illustration — © Rally XP |
 | `founder-jackson.png` | Jackson Wang's founder card (`/company/`) | Own illustration — © Rally XP |
 | `venueos-create-tournament.png` | Capability 1, Create tournaments (`/organize/`) | Own product mockup — © Rally XP |
@@ -47,13 +46,8 @@ attribution required. Credited here anyway, as Unsplash's API guidelines ask.
 | `badge-app-store.png` | App Store button (home, `/play/`) | Official Apple badge artwork |
 | `badge-google-play.png` | Google Play button (home, `/play/`) | Official Google badge artwork |
 
-918×262 PNG with transparency (24 KB), rendered at 36px tall in the header
-(30px below 26rem). The header bar stays 68px regardless.
-
-**A reversed version would help.** The wordmark text in this file is black, so it
-cannot sit on the dark footer — the footer still uses the type-set wordmark in white.
-Supply a white-text variant (`logo-pickle-duels-light.png`) and the footer can use the
-real logo too.
+The site logo (header and footer) is a type-set wordmark in `src/partials/header.html`
+and `src/partials/footer.html`, styled in `site.css`, so it needs no image file.
 
 `founder-jackson.png` is an illustrated avatar, resized from a 1254×1254 WebP to
 360×360 PNG. PNG rather than JPEG because the artwork is line work on flat colour,
