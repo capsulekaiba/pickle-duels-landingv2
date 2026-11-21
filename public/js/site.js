@@ -205,7 +205,7 @@
           submit.disabled = false;
           submit.textContent = 'Request a demo';
         }
-        setError('Sorry, we couldn’t send your request. Please try again, or email us at pickleduels@gmail.com.');
+        setError('Sorry, we couldn’t send your request. Please try again, or email us at hello@pickleduels.com.');
         if (formError) formError.focus();
       });
   });
